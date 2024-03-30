@@ -1,6 +1,6 @@
-FROM node:lasted AS angular
+FROM node:14 as angular
 
-WORKDIR /memoteca
+WORKDIR /app-angular
 
 COPY . .
 
@@ -11,4 +11,4 @@ FROM httpd:alpine3.15
 
 WORKDIR /usr/local/apache2/htdocs
 
-COPY --from=angular /app/dist/memoteca .
+COPY --from=angular /app-angular/dist/memoteca .
