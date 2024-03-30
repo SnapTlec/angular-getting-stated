@@ -7,7 +7,7 @@ import { Pensamento } from '../pensamento/interface/pensamento';
 })
 export class PensamentoService {
 
-  private readonly API = 'http://localhost:3000/pensamentos'
+  private readonly API = process.env['BACKEND']!
   constructor(private http : HttpClient) { }
 
   listarPensamentos() : Observable<Pensamento[]>{
